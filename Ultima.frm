@@ -9,6 +9,14 @@ Begin VB.Form Form1
    ScaleHeight     =   13365
    ScaleWidth      =   20655
    StartUpPosition =   3  '窗口缺省
+   Begin VB.CommandButton Command1 
+      Caption         =   "Command1"
+      Height          =   855
+      Left            =   1920
+      TabIndex        =   84
+      Top             =   11760
+      Width           =   1335
+   End
    Begin VB.ListBox List1 
       BeginProperty Font 
          Name            =   "华文宋体"
