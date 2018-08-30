@@ -9,14 +9,6 @@ Begin VB.Form Form1
    ScaleHeight     =   13365
    ScaleWidth      =   20655
    StartUpPosition =   3  '窗口缺省
-   Begin VB.CommandButton Command1 
-      Caption         =   "Command1"
-      Height          =   855
-      Left            =   1920
-      TabIndex        =   84
-      Top             =   11760
-      Width           =   1335
-   End
    Begin VB.ListBox List1 
       BeginProperty Font 
          Name            =   "华文宋体"
@@ -856,6 +848,7 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   1215
       Index           =   39
       Left            =   9840
@@ -1629,6 +1622,26 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub Form_Load()
 
+Private Sub Form_Initialize()
+For i = 0 To 63
+If i Mod 2 Then
+If Int(i / 8) Mod 2 Then
+Label1(i).BackColor = &H80000002
+Else
+Label1(i - 1).BackColor = &H80000002
+End If
+End If
+Next
+black = Array("C", "L", "Ч", "W", "K", "Ч", "L", "I")
+white = Array("I", "L", "Ч", "K", "W", "Ч", "L", "C")
+For i = 0 To 7
+Label1(i) = black(i)
+Label1(8 + i) = "P"
+Label1(48 + i) = "P"
+Label1(56 + i) = white(i)
+Label1(48 + i).ForeColor = &HFFFFFF
+Label1(56 + i).ForeColor = &HFFFFFF
+Next
 End Sub
+
